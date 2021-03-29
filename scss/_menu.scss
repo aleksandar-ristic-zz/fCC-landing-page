@@ -1,7 +1,109 @@
 .menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 5rem;
+    top: 2.7rem;
+    cursor: pointer;
+    @include easeOut;
 
+    .menu-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: $light-color;
+        @include easeOut;
+    }
+
+    // Rotate menu btn into X
+    &.close {
+        transform: rotate(180deg);
+
+        .menu-line {
+
+            &:first-child {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            &:nth-child(2) {
+                transform: translateX(-5px);
+                opacity: 0;
+            }
+
+            &:last-child {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+        }
+    }
 }
 
 .menu {
-    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: .9;
+    visibility: hidden;
+
+    &.show {
+        visibility: visible;
+    }
+
+    &-nav {
+        margin: 0;
+        padding: 0;
+        flex-flow: column wrap;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: darken($dark-color, 5);
+        list-style: none;
+        transform: translate3d(0, -100%, 0);
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .nav-item {
+        transform: translate3d(600px,0,0);
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0,0,0);
+        }
+
+        &.current > a {
+            color: $secondary-color;
+        }
+
+        a {
+            @include easeOut;
+
+            &:hover {
+                color: lighten($secondary-color, 5);
+            }
+        }
+    }
+
+    .nav-link {
+        display: inline-block;
+        position: relative;
+        padding: 1rem 0;
+        font-size: 2rem;
+        font-weight: 300;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: set-text-color($primary-color);
+        @include easeOut;
+    }
 }
+
+// delay each nav item slide by .1s
+
+@for $x from 1 through 8 {
+    .nav-item:nth-child(#{$x}) {
+        transition-delay: $x * .06s;
+    }
+}
+    
+    
