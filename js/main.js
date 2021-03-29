@@ -2,11 +2,12 @@
 
 
 // Video 
-/*
-btnVideo = document.querySelector('');
 
-addEventListener('click', );
-*/
+btnVideo = document.querySelector('.video-container');
+
+btnVideo.addEventListener('click', function() {
+    btnVideo.classList.add('active');
+});
 
 // Testimonial
 const btnNext = document.querySelector('.next');

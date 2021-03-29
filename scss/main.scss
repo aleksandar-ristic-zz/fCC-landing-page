@@ -337,6 +337,19 @@ header {
             z-index: 2;
             animation: clickMe 1s ease-out infinite;
         }
+
+        &.active {
+
+            &::before {
+                z-index: -1;
+                height: 0;
+            }
+
+            &::after {
+                z-index: -1;
+                pointer-events: none;
+            }
+        }
     }
 
     .subscribe {
@@ -541,7 +554,7 @@ header {
         .box.active {
             .accordion-body {
                 height: 120px;
-                margin: 0 1rem;
+                margin: 0 0 -.5rem 1rem;
                 padding: 1rem 1.5rem 0 1.5rem;
                 overflow-y: auto;
                 box-shadow: 0 0 5px 5px rgba($secondary-color, .15);
@@ -556,7 +569,129 @@ header {
     }
 }
 
+#blog {
 
+    .items-container {
+        margin-top: 3rem;
+        width: 100%;
+
+        .blog-item {
+            position: relative;
+
+            img {
+                @include easeOut;
+                height: 100%;
+                width: auto;
+                border-radius: .5rem;
+            }
+
+            .onHover {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                bottom: 40%;
+                left: 1rem;
+                visibility: hidden;
+                height: 0;
+                transition-delay: .1s;
+                @include easeOut;
+
+                h4 {
+                    font-size: 1.2rem;
+                    color: $primary-color;
+                }
+                
+                p {
+                    color: #1d46f5;
+                }
+            }
+
+            &:hover {
+
+                img {
+                    filter: blur(2px);
+                    filter: contrast(.3);
+                }
+                
+                .onHover {
+                    visibility: visible; 
+                }
+            }
+        }
+    }
+}
+
+#form {
+    background: url(../assets/bg/banner-2.png);
+    background-repeat: no-repeat;
+
+    :is(.header-container, .basic-text, .heading-info) {
+        color: $primary-color;
+    }
+
+    .form-container {
+        width: 50%;
+        background: $primary-color;
+        border-radius: 1rem;
+        padding: 2rem;
+        
+        form.grid {
+            width: 100%;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 1fr);
+
+            .basic.grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .input-container {
+                width: 100%;
+
+                & > * {
+                    width: 100%;
+                }
+
+                input,
+                textarea {
+                    font-size: 1.2rem;
+                    padding: .5rem 1rem;
+                    border: 1px solid lighten($secondary-color, 40);
+                    border-radius: .5rem;
+                    outline: none;
+                    resize: none;
+
+                    &:focus {
+                        border: 1px solid #1d46f5;
+                    }
+                }
+            }
+
+            .text-area {
+                grid-row: 3 / -1;
+
+                textarea {
+                    height: 100%;
+                }
+            }
+
+            input.btn {
+                justify-self: center;
+                max-width: 20%;
+            }
+        }
+    }
+}
+
+footer {
+    padding: 2rem;
+    margin-top: -.1rem;
+    color: $primary-color;
+    background: $gradient;
+
+    p {
+        max-width: 40%;
+    }
+}
 
 
 

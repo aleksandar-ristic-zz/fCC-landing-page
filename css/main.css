@@ -305,6 +305,16 @@ header .logo a img {
   animation: clickMe 1s ease-out infinite;
 }
 
+#video-section .video-container.active::before {
+  z-index: -1;
+  height: 0;
+}
+
+#video-section .video-container.active::after {
+  z-index: -1;
+  pointer-events: none;
+}
+
 #video-section .subscribe {
   margin-top: 5rem;
   padding: 2rem;
@@ -502,7 +512,7 @@ header .logo a img {
 
 #faq .accordion-container .box.active .accordion-body {
   height: 120px;
-  margin: 0 1rem;
+  margin: 0 0 -.5rem 1rem;
   padding: 1rem 1.5rem 0 1.5rem;
   overflow-y: auto;
   box-shadow: 0 0 5px 5px rgba(51, 51, 51, 0.15);
@@ -510,6 +520,125 @@ header .logo a img {
 
 #faq .accordion-container .box.active .accordion-header::before {
   content: '-';
+}
+
+#blog .items-container {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+#blog .items-container .blog-item {
+  position: relative;
+}
+
+#blog .items-container .blog-item img {
+  transition: all .5s ease-in;
+  height: 100%;
+  width: auto;
+  border-radius: .5rem;
+}
+
+#blog .items-container .blog-item .onHover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 40%;
+  left: 1rem;
+  visibility: hidden;
+  height: 0;
+  transition-delay: .1s;
+  transition: all .5s ease-in;
+}
+
+#blog .items-container .blog-item .onHover h4 {
+  font-size: 1.2rem;
+  color: #f0f8ff;
+}
+
+#blog .items-container .blog-item .onHover p {
+  color: #1d46f5;
+}
+
+#blog .items-container .blog-item:hover img {
+  filter: blur(2px);
+  filter: contrast(0.3);
+}
+
+#blog .items-container .blog-item:hover .onHover {
+  visibility: visible;
+}
+
+#form {
+  background: url(../assets/bg/banner-2.png);
+  background-repeat: no-repeat;
+}
+
+#form :is(.header-container, .basic-text, .heading-info) {
+  color: #f0f8ff;
+}
+
+#form .form-container {
+  width: 50%;
+  background: #f0f8ff;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+#form .form-container form.grid {
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+}
+
+#form .form-container form.grid .basic.grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#form .form-container form.grid .input-container {
+  width: 100%;
+}
+
+#form .form-container form.grid .input-container > * {
+  width: 100%;
+}
+
+#form .form-container form.grid .input-container input,
+#form .form-container form.grid .input-container textarea {
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+  border: 1px solid #999999;
+  border-radius: .5rem;
+  outline: none;
+  resize: none;
+}
+
+#form .form-container form.grid .input-container input:focus,
+#form .form-container form.grid .input-container textarea:focus {
+  border: 1px solid #1d46f5;
+}
+
+#form .form-container form.grid .text-area {
+  grid-row: 3 / -1;
+}
+
+#form .form-container form.grid .text-area textarea {
+  height: 100%;
+}
+
+#form .form-container form.grid input.btn {
+  justify-self: center;
+  max-width: 20%;
+}
+
+footer {
+  padding: 2rem;
+  margin-top: -.1rem;
+  color: #f0f8ff;
+  background: linear-gradient(to right, #1d46f5, #6809dc);
+}
+
+footer p {
+  max-width: 40%;
 }
 
 /* *** Animation *** */
