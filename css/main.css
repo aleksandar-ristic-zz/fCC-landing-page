@@ -282,3 +282,72 @@ header .logo a img {
   box-shadow: 0 0 5px 5px rgba(29, 70, 245, 0.3);
   color: #1d46f5;
 }
+
+#video-section .md-heading {
+  margin: 0;
+}
+
+#video-section .basic-text {
+  margin-bottom: 3rem;
+  max-width: 50%;
+}
+
+#video-section .video-container {
+  position: relative;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 10px rgba(51, 51, 51, 0.15);
+}
+
+#video-section .video-container::before {
+  content: '';
+  position: absolute;
+  margin: auto;
+  height: calc(100% - 4rem);
+  width: calc(100% - 4rem);
+  background-color: rgba(29, 70, 245, 0.8);
+}
+
+#video-section .video-container::after {
+  content: '\f35a';
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 3rem;
+  color: #f0f8ff;
+  border-radius: 50%;
+  z-index: 2;
+  animation: clickMe 1s ease-out infinite;
+}
+
+#video-section .subscribe {
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(to right, #1d46f5, #6809dc);
+  color: #f0f8ff;
+  min-width: 60%;
+}
+
+#video-section .subscribe .sm-heading {
+  font-size: 2rem;
+  background-color: transparent;
+}
+
+#video-section .subscribe .input-container {
+  width: 100%;
+  flex-direction: row;
+}
+
+/* *** Animation *** */
+@keyframes clickMe {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}

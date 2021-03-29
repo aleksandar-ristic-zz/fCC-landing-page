@@ -302,13 +302,85 @@ header {
                     box-shadow: 0 0 5px 5px rgba(#1d46f5, .3);
                     color: #1d46f5;
                 }
-            }
-           
+            }  
+        }
+    }  
+}
+
+#video-section {
+
+    .md-heading {
+       margin: 0;
+    }
+
+    .basic-text {
+        margin-bottom: 3rem;
+        max-width: 50%;
+    }
+
+    .video-container {
+        position: relative;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px 10px rgba($secondary-color, .15);
+        
+        &::before {
+            content: '';
+            position: absolute;
+            margin: auto;
+            height: calc(100% - 4rem);
+            width: calc(100% - 4rem);
+            background-color: rgba($color: #1d46f5, $alpha: .8);
+        }
+
+        &::after {
+            content: '\f35a';
+            position: absolute;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 3rem;
+            color: $primary-color;
+            border-radius: 50%;
+            z-index: 2;
+            animation: clickMe 1s ease-out infinite;
         }
     }
-    
+
+    .subscribe {
+        margin-top: 5rem;
+        padding: 2rem;
+        border-radius: 1rem;
+        background-image: $gradient;
+        color: $primary-color;
+        min-width: 60%;
+
+        .sm-heading {
+            font-size: 2rem;
+            background-color: transparent;
+        }
+        
+        .input-container {
+            width: 100%;
+            flex-direction: row;
+        }
+    }
 }
 
 
+
+
+/* *** Animation *** */
+
+@keyframes clickMe {
+    0% {
+        transform: translateX(0)
+    }
+    20% {
+        transform: translateX(-5px)
+    }
+    100% {
+        transform: translateX(10px)
+    }
+}
 
 @import 'mobile';
