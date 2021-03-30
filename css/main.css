@@ -9,7 +9,7 @@
 8.  Testimonial
 9.  FAQ    ** ACCORDION
 10. Blog
-11. Form
+11. Contact
 12. Footer
 
  *** *** *** */
@@ -756,8 +756,8 @@ img {
   visibility: visible;
 }
 
-/* *** Form *** */
-#form {
+/* *** Contact *** */
+#contact {
   background: linear-gradient(to right, #1d46f5, #6809dc);
   background: url(../assets/bg/banner-2.png);
   background-repeat: no-repeat;
@@ -765,37 +765,37 @@ img {
   background-position: left bottom;
 }
 
-#form :is(.header-container, .basic-text, .heading-info) {
+#contact :is(.header-container, .basic-text, .heading-info) {
   color: #f0f8ff;
 }
 
-#form .form-container {
+#contact .form-container {
   width: 50%;
   padding: 2rem;
   border-radius: 1rem;
   background: #f0f8ff;
 }
 
-#form .form-container form.grid {
+#contact .form-container form.grid {
   width: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 1fr);
 }
 
-#form .form-container form.grid .basic.grid {
+#contact .form-container form.grid .basic.grid {
   width: 100%;
 }
 
-#form .form-container form.grid .input-container {
+#contact .form-container form.grid .input-container {
   width: 100%;
 }
 
-#form .form-container form.grid .input-container > * {
+#contact .form-container form.grid .input-container > * {
   width: 100%;
 }
 
-#form .form-container form.grid .input-container input,
-#form .form-container form.grid .input-container textarea {
+#contact .form-container form.grid .input-container input,
+#contact .form-container form.grid .input-container textarea {
   padding: .5rem 1rem;
   font-size: 1.2rem;
   border: 1px solid #999999;
@@ -804,20 +804,20 @@ img {
   resize: none;
 }
 
-#form .form-container form.grid .input-container input:focus,
-#form .form-container form.grid .input-container textarea:focus {
+#contact .form-container form.grid .input-container input:focus,
+#contact .form-container form.grid .input-container textarea:focus {
   border: 1px solid #1d46f5;
 }
 
-#form .form-container form.grid .text-area {
+#contact .form-container form.grid .text-area {
   grid-row: 3 / -1;
 }
 
-#form .form-container form.grid .text-area textarea {
+#contact .form-container form.grid .text-area textarea {
   height: 100%;
 }
 
-#form .form-container form.grid input.btn {
+#contact .form-container form.grid input.btn {
   justify-self: center;
   max-width: 150px;
 }
@@ -908,10 +908,10 @@ footer p {
     grid-template-columns: 1fr;
     justify-items: center;
   }
-  #form .header-container p.heading-info {
+  #contact .header-container p.heading-info {
     visibility: hidden;
   }
-  #form .form-container {
+  #contact .form-container {
     width: 80%;
     margin-bottom: -2rem;
   }
@@ -1027,13 +1027,13 @@ footer p {
   #faq .accordion-container {
     width: 80%;
   }
-  #form .form-container form.grid {
+  #contact .form-container form.grid {
     grid-template-rows: 2fr 1fr 3fr;
   }
-  #form .form-container form.grid .basic.grid {
+  #contact .form-container form.grid .basic.grid {
     grid-template-columns: 1fr;
   }
-  #form .form-container form.grid .basic.grid input.btn.btn-primary {
+  #contact .form-container form.grid .basic.grid input.btn.btn-primary {
     margin: 0;
   }
   footer {
@@ -1188,20 +1188,20 @@ footer p {
   #faq .accordion-container {
     width: 95%;
   }
-  #form .header-container h2 {
+  #contact .header-container h2 {
     position: relative;
     top: 4rem;
   }
-  #form .header-container p.basic-text {
+  #contact .header-container p.basic-text {
     visibility: hidden;
   }
-  #form .form-container {
+  #contact .form-container {
     width: 100%;
     margin-bottom: 1rem;
     padding: 1rem;
   }
-  #form .form-container form.grid,
-  #form .form-container .basic.grid {
+  #contact .form-container form.grid,
+  #contact .form-container .basic.grid {
     gap: .5rem;
   }
 }

@@ -16,19 +16,19 @@
 <!-- Navigation -->
     <header id="header">
         <div class="logo">
-            <a href="#"><img src="assets/logo.svg" alt="dumbbell logo"><span>Weights&co</span></a>
+            <a href="#"><img id="header-img" src="assets/logo.svg" alt="dumbbell logo"><span>Weights&co</span></a>
         </div>
        <div class="menu-btn">
            <div class="menu-line"></div>
            <div class="menu-line"></div>
            <div class="menu-line"></div>
        </div>
-       <nav class="menu">
+       <nav id="nav-bar" class="menu">
            <ul class="menu-nav flex">
                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
-               <li class="nav-item"><a href="#why-choose" class="nav-link">Product</a></li>
+               <li class="nav-item"><a href="#product" class="nav-link">Product</a></li>
                <li class="nav-item"><a href="#testimonial" class="nav-link">Testimonial</a></li>
                <li class="nav-item"><a href="#faq" class="nav-link">Faq</a></li>
                <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
@@ -247,7 +247,7 @@
                 </p>
             </div>
             <div class="video-container flex">
-                <iframe 
+                <iframe id="video" 
                     width="640" height="360" src="https://www.youtube.com/embed/Pz8t38cosbg" 
                     title="Adjustable Weight Training" frameborder="0" allow="accelerometer; 
                     clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -423,7 +423,7 @@
         </div>
     </section>
 <!-- Form -->
-    <section class="form" id="form">
+    <section class="contact" id="contact">
         <div class="container flex">
             <div class="header-container flex">
                 <p class="heading-info">Have any questions ?</p>
@@ -433,23 +433,23 @@
                 </p>
             </div>
             <div class="form-container flex">
-                <form class="grid">
+                <form id="form" class="grid" action="https://www.freecodecamp.com/email-submit">
                     <div class="basic grid">
                         <div class="input-container  name">
-                            <input type="text" placeholder="Name*">
+                            <input name="name" type="text" placeholder="Name*">
                         </div>
                         <div class="input-container email">
-                            <input type="email" placeholder="Email*">
+                            <input name="email" id="email" type="email" placeholder="Email*">
                         </div>
                     </div>
                     
                     <div class="input-container subject">
-                        <input type="text" placeholder="Subject">
+                        <input name="subject" type="text" placeholder="Subject">
                     </div>
                     <div class="input-container text-area">
                         <textarea placeholder="Write Your Message*"></textarea>
                     </div>
-                    <input class="btn btn-primary" type="submit" value="Submit">
+                    <input class="btn btn-primary" type="submit" id="submit" value="Submit">
                 </form>
             </div>
         </div>
