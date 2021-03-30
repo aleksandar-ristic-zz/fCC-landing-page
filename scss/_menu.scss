@@ -2,7 +2,7 @@
     position: absolute;
     z-index: 3;
     right: 5rem;
-    top: 2.7rem;
+    top: 2.2rem;
     cursor: pointer;
     @include easeOut;
 
@@ -72,15 +72,11 @@
             transform: translate3d(0,0,0);
         }
 
-        &.current > a {
-            color: $secondary-color;
-        }
-
         a {
             @include easeOut;
 
             &:hover {
-                color: lighten($secondary-color, 5);
+                color: lighten($primary-color, 5);
             }
         }
     }
@@ -93,17 +89,15 @@
         font-weight: 300;
         text-decoration: none;
         text-transform: uppercase;
-        color: set-text-color($primary-color);
+        color: $light-color;
         @include easeOut;
     }
 }
 
-// delay each nav item slide by .1s
+// delay each nav item slide by .06s
 
 @for $x from 1 through 8 {
     .nav-item:nth-child(#{$x}) {
         transition-delay: $x * .06s;
     }
 }
-    
-    

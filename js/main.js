@@ -1,3 +1,21 @@
+// Header
+const homeSection = document.getElementById("home");
+const homeSectionHeight = homeSection.clientHeight;
+
+let header = document.getElementById("header");
+
+document.addEventListener("scroll", function(){
+    if(document.documentElement.scrollTop > homeSectionHeight) {
+        if (!header.classList.contains("fixed-header")) {
+            header.classList.add("fixed-header");
+        }
+    } else {
+        if(header.classList.contains("fixed-header")) {
+            header.classList.remove("fixed-header");
+        }
+    }
+});
+
 // Menu
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu');

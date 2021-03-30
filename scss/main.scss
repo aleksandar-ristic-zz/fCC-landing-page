@@ -1,123 +1,38 @@
+/* *** Table of Contents *** 
+1.  Base Styles
+2.  Header  **and side Icons
+3.  Home
+4.  About
+5.  Features
+6.  Product
+7.  Video
+8.  Testimonial
+9.  FAQ    ** ACCORDION
+10. Blog
+11. Form
+12. Footer
+
+ *** *** *** */
+
 @import 'config';
+@import 'utils';
 @import 'menu';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
-
-/* *** Base Styles *** */
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background: $light-color;
-    color: set-text-color($light-color);
-    height: 100%;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
-}
-
-/* *** Headings *** */
-:is(h1, h2, h3, h4) {
-    margin-bottom: 1rem;
-
-    &.lg-heading {
-        font-weight: 800;
-        font-size: 4rem;
-    }
-
-    &.md-heading {
-        font-weight: 700;
-        font-size: 2.5rem;
-    }
-
-    &.sm-heading {
-        font-weight: 600;
-        font-size: 1.8rem;
-    }
-}
-
-a {
-    color: $light-color;
-    text-decoration: none;
-}
-
-img {
-    height: auto;
-    max-width: 100%;
-}
-
-.flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.container {
-    padding: 2rem 10rem;
-    padding-top: 10rem;
-}
-
-.btn {
-    color: $light-color;
-    border: 0;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    border-radius: 1.5rem;
-    @include easeOut;
-
-    &:hover {
-        transform: scale(1.02);
-    }
-
-    &:active {
-        transform: scale(.98);
-    }
-}
-
-.btn-primary {
-    background-image: $gradient;
-    align-self: flex-start;
-    margin-top: 2rem;
-}
-
-.header-container {
-    .heading-info {
-        font-weight: 500;
-        font-size: 1.2rem;
-        color: $secondary-color;
-        margin-bottom: -1rem;
-    }
-    
-    .basic-text {
-        color: lighten(set-text-color($light-color), 10);
-        line-height: 2.0;
-        margin-bottom: 2rem;
-    }
-}
-
-
 /* *** Header *** */
 
-header {
-    padding: 0 5rem;
-    position: fixed;
-    z-index: 5;
+#header {
+    position: relative;
     width: 100%;
+    height: 0;
+    z-index: 5;
+    @include easeOut;
 
     .logo {
-        margin-top: 1rem;
+        position: absolute;
+        margin-top: .5rem;
+        padding-left: 5rem;
+        z-index: 5;
 
         a {
             display: flex;
@@ -134,12 +49,38 @@ header {
             }
         }
     }
+
+    &.fixed-header {
+        position: fixed;
+        background: $gradient;
+        height: 85px;
+        opacity: .95;
+    }
 }
 
 .links {
-    display: none;
+    position: fixed;
+    bottom: 10%;
+    right: -2rem;
+    transform: rotateZ(90deg);
+    background: transparent;
+    z-index: 5;
+    @include easeOut;
+
+    .icons {
+        
+        a {
+            color: $primary-color;
+            margin-left: 1rem;
+            
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
 }
 
+/* *** Home *** */
 #home {
     min-height: 100vh;
     background-image: url(../assets/bg/banner-1.png);
@@ -158,6 +99,7 @@ header {
     }
 }
 
+/* *** About *** */
 #about {
 
     .right-side.flex {
@@ -189,8 +131,13 @@ header {
     }
 }
 
+/* *** Features *** */
 #features {
     position: relative;
+
+    .feature-container.grid {
+        justify-items: center;
+    }
 
     .feature-container {
         position: relative;
@@ -250,6 +197,7 @@ header {
     }
 }
 
+/* *** Product *** */
 #product {
     min-height: 100vh;
     background-image: url(../assets/bg/banner-2.png);
@@ -286,7 +234,7 @@ header {
             margin-bottom: 2rem;
             border-radius: .5rem;
             flex-direction: row;
-
+            box-shadow: 0 0 5px 5px rgba($dark-color, .15);
 
             .why-item {
 
@@ -311,6 +259,7 @@ header {
     }  
 }
 
+/* *** Video *** */
 #video-section {
 
     .header-container {
@@ -407,6 +356,7 @@ header {
     }
 }
 
+/* *** Testimonial *** */
 #testimonial {
     background-color: lighten($dark-color, 70);
 
@@ -416,12 +366,12 @@ header {
         padding: 2rem;
 
         .slide {
-
             max-width: 60%;
             position: relative;
             padding: 2rem;
             border-radius: .5rem;
             flex-direction: row;
+            @include easeOut;
 
             .slide-text {
                 max-width: 80%;
@@ -430,8 +380,8 @@ header {
             .slide-img {
                 img {
                     position: relative;
-                    height: auto;
-                    max-width: 100%;
+                    width: 250px;
+                    max-width: 250px;
                     border: 1px solid $primary-color;
                     box-shadow: 0 0 5px 5px rgba($color: $primary-color, $alpha: .2);
                     border-radius: 50%;
@@ -480,12 +430,12 @@ header {
         .next,
         .prev {
             position: absolute;
+            top: 45%;
             color: $primary-color;
-            top: 80%;
             padding: .5rem 1.5rem;
             border: 1px solid #333;
             @include easeOut;
-
+            
             &:hover {
                 color: $secondary-color;
                 border: 1px solid lighten(#333, 10);
@@ -493,39 +443,38 @@ header {
         }
 
         .next {
-            left: 45%;
+            left: 10%;
         }
 
         .prev {
-            right: 45%;
+            right: 5%;
         }
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: 20%;
-            width: 180px;
-            height: 180px;
-            background: $gradient;
-            border-radius: 5% 95% 16% 84% / 63% 20% 80% 37%;
-            opacity: .9;
-        }
-
+        &::before,
         &::after {
             content: '';
             position: absolute;
-            top: 10%;
-            right: 30%;
             width: 180px;
             height: 180px;
             background: $gradient;
-            border-radius: 20% 80% 74% 26% / 82% 52% 48% 18% ;
             opacity: .9;
+        }
+
+        &::before {
+            top: 50%;
+            right: 20%;
+            border-radius: 5% 95% 16% 84% / 63% 20% 80% 37%;
+        }
+
+        &::after {
+            top: 10%;
+            right: 30%;
+            border-radius: 20% 80% 74% 26% / 82% 52% 48% 18% ;
         }
     }
 }
 
+/* *** FAQ  - ACCORDION *** */
 #faq {
 
     .accordion-container {
@@ -580,9 +529,10 @@ header {
     }
 }
 
+/* *** Blog *** */
 #blog {
 
-    .items-container {
+    .items-container.grid {
         margin-top: 3rem;
         width: 100%;
 
@@ -601,7 +551,7 @@ header {
                 height: 100%;
                 width: 100%;
                 bottom: 40%;
-                left: 1rem;
+                left: 12.5%;
                 visibility: hidden;
                 height: 0;
                 transition-delay: .1s;
@@ -609,7 +559,7 @@ header {
 
                 h4 {
                     font-size: 1.2rem;
-                    color: $light-color;
+                    color: $dark-color;
                 }
                 
                 p {
@@ -621,7 +571,7 @@ header {
 
                 img {
                     filter: blur(2px);
-                    filter: contrast(.3);
+                    filter: contrast(.1);
                 }
                 
                 .onHover {
@@ -632,7 +582,9 @@ header {
     }
 }
 
+/* *** Form *** */
 #form {
+    background: $gradient;
     background: url(../assets/bg/banner-2.png);
     background-repeat: no-repeat;
 
@@ -687,15 +639,16 @@ header {
 
             input.btn {
                 justify-self: center;
-                max-width: 20%;
+                width: 150px;
             }
         }
     }
 }
 
+/* Footer */
 footer {
     padding: 2rem;
-    margin-top: -.1rem;
+    margin-top: -1.5rem;
     color: $light-color;
     background: $gradient;
 
@@ -704,10 +657,7 @@ footer {
     }
 }
 
-
-
 /* *** Animation *** */
-
 @keyframes clickMe {
     0% {
         transform: translateX(0)

@@ -11,25 +11,25 @@ $bg-opacity: .8;
 
 // Media Query mixins
 @mixin mediaSm {
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 550px) {
         @content;
     }
 }
 
 @mixin mediaMd {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 799px) {
         @content;
     }
 }
 
 @mixin mediaLg {
-    @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @media screen and (max-width: 1200px) {
         @content;
     }
 }
 
 @mixin mediaXl {
-    @media screen and (min-width: 1171px) {
+    @media screen and (max-width: 1450px) {
         @content;
     }
 }
