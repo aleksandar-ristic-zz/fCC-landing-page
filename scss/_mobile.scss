@@ -1,4 +1,4 @@
-//Desktops
+/* *** Desktops *** */
 @include mediaXl {
     section {
         .container {
@@ -7,7 +7,7 @@
     }
 }
 
-//Laptops
+/* *** Laptops *** */
 @include mediaLg {
 
     section {
@@ -20,14 +20,7 @@
         }
     }
 
-    footer {
-        p.basic-text {
-            max-width: 80%;
-        }
-    }
-
     #home {
-
         h1 {
             width: 100%;
             position: relative;
@@ -36,7 +29,6 @@
     }
 
     #about {
-
         .header-container {
             .heading-info {
                 align-self: flex-start;
@@ -58,8 +50,8 @@
         }
 
         .feature-container.grid {
-            justify-self: center;
             grid-template-columns: 1fr;
+            justify-self: center;
         }
 
         &::after {
@@ -69,13 +61,12 @@
     }
 
     #product {
-
         .md-heading {
             margin-top: 8rem;
         }
 
         .container.grid {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: 1fr;
         }
 
         .left-side {
@@ -84,7 +75,6 @@
     }
 
     #testimonial {
-
         .slider-container {
             .slide {
                 max-width: 80%;
@@ -98,13 +88,11 @@
                 right: 0;
             }
         }
-        
-        
     }
 
     #blog {
         .grid {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: 1fr;
             justify-items: center;
         }
     }
@@ -121,10 +109,15 @@
             margin-bottom: -2rem;
         }
     }
-    
+
+    footer {
+        p.basic-text {
+            max-width: 80%;
+        }
+    }
 }
 
-//Tablets and small laptops
+/* *** Tablets And Small Laptops *** */
 @include mediaMd {
 
     :is(h1, h2, h3, h4) {
@@ -148,7 +141,7 @@
 
     section {
         .container {
-            padding: 3rem 2rem 3rem;
+            padding: 3rem 3rem 2rem;
         }
     }
 
@@ -172,7 +165,6 @@
     }
 
     #about {
-
         .header-container {
             p.heading-info {
                 align-self: center;
@@ -214,10 +206,9 @@
     #video-section {
 
         .header-container {
-    
             p.basic-text {
-                margin-bottom: 3rem;
                 max-width: 80%;
+                margin-bottom: 3rem;
             }
         }
 
@@ -232,13 +223,11 @@
             width: 100%;
 
             .sm-heading {
-                margin-top: 0;
-                margin-bottom: 1rem;
+                margin-top: 0 0 1.5rem;
                 font-size: 1.5rem;
             }
 
             .input-container {
-                
                 .input[type='email'] {
                     width: 100%;
                 }
@@ -263,21 +252,21 @@
                 }
 
                 .slide-img {
+
                     img {
-                        left: 12rem;
-                        bottom: 7rem;
+                        left: 25%;
                         width: 50%;
                     }
                 }
             
                 &::before {
                     top: 0;
-                    left: 65%;
+                    left: 75%;
                 }
             }
 
             .next, .prev {
-                top: 30%;
+                top: 45%;
             }
 
             &::before,
@@ -287,13 +276,13 @@
             }
 
             &::before {
-                top: 45%;
-                right: 20%;
+                top: 85%;
+                right: 35%;
             }
 
             &::after {
-                top: 62%;
-                right: 32%;
+                top: 72%;
+                right: 55%;
             }
         }
     }
@@ -306,14 +295,11 @@
 
     #form {
         .form-container {
-            
             form.grid {
-                
                 grid-template-rows: 2fr 1fr 3fr;
 
                 .basic.grid {
                     grid-template-columns: 1fr;
-                
 
                     input.btn.btn-primary {
                         margin: 0;
@@ -322,15 +308,15 @@
             }
         }
     }
+
     footer {
         padding: .5rem;
     }
 }
 
-//Mobile Phones
+/* *** Mobile Phones *** */
 @include mediaSm {
     body {
-        overflow-x: hidden;
         font-size: .9rem;
     }
 
@@ -340,10 +326,9 @@
 
     section {
         .container {
-            padding: 1rem 0 1rem;
+            padding: 1rem 1rem 0;
 
             .header-container {
-
                 p.basic-text {
                     max-width: 90%;
                     color: $dark-color;
@@ -388,8 +373,8 @@
         }
 
         .menu-btn {
-            right: 1rem;
             top: 1.5rem;
+            right: 1rem;
         }
 
         .menu {
@@ -411,10 +396,14 @@
                 max-width: 90%;
             }
         }
+
+        &::after {
+            top: 92%;
+            right: 0;
+        }
     }
 
     #product {
-
         .right-side {
             .header-container {
                 h2.md-heading {
@@ -429,7 +418,6 @@
     }
 
     #video-section {
-
         .header-container {
             text-align: center;
         }
@@ -438,8 +426,8 @@
             padding: 0;
 
             iframe {
-                width: 260px;
-                height: 135px;
+                width: 320px;
+                height: 180px;
             }
 
             &::before {
@@ -450,7 +438,6 @@
         }
 
         .subscribe {
-            border-radius: 0;
             font-size: 1rem;
 
             h3.sm-heading {
@@ -465,8 +452,7 @@
                 }
 
                 button.btn.btn-submit {
-                    margin-left: 0;
-                    margin-top: 1rem;
+                    margin: 1rem 0 0 0;
                 }
             }
         }
@@ -482,15 +468,9 @@
             padding-bottom: 0;
 
             .slide {
-                align-items: center;
-                padding: 0;
                 max-width: 95%;
-
-                div {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
+                padding: 0;
+                align-items: center;
 
                 .slide-text {
                     width: 100%;
@@ -501,9 +481,8 @@
                 }
 
                 .slide-img {
-
                     img {
-                        left: 0;
+                        left: 25%;
                         top: 0;
                         width: 50%;
                     }
@@ -515,7 +494,7 @@
                 }
 
                 &::after {
-                    top: -18%;
+                    top: -16%;
                     left: -10%;
                 }
             }
@@ -525,12 +504,12 @@
             }
 
             &::before {
-                top: 80%;
+                top: 90%;
                 right: 25%;
             }
 
             &::after {
-                top: 75%;
+                top: 72%;
                 right: 60%;
             }
         }
@@ -539,8 +518,8 @@
     #blog {
         .items-container {
             .blog-item {
-                 
                 justify-self: center;
+
                 img {
                     width: 80%;
                 }
@@ -549,15 +528,23 @@
     }
 
     #faq {
+        .header-container {
+            h2 {
+                text-align: center;
+            }
+        }
+
         .accordion-container {
             width: 95%;
         }
     }
 
     #form {
-
         .header-container {
-            color: $dark-color;
+            h2 {
+                position: relative;
+                top: 4rem;
+            }
 
             p.basic-text {
                 visibility: hidden;
@@ -565,19 +552,14 @@
         }
 
         .form-container {
-            border-radius: 0;
             width: 100%;
-            padding: 1rem;
             margin-bottom: 1rem;
+            padding: 1rem;
 
             form.grid,
             .basic.grid {
-                gap: 1rem;
+                gap: .5rem;
             }
         }
-    }
-
-    html {
-        overflow-x: scroll;
     }
 }

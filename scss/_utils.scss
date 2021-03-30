@@ -68,14 +68,16 @@ img {
 }
 
 .container {
-    padding: 10rem 2rem 10rem;
+    padding: 10rem 10rem 2rem;
 }
 
+/* *** Buttons *** */
+
 .btn {
-    color: $light-color;
-    border: 0;
     padding: 1rem 2rem;
+    color: $light-color;
     font-size: 1.2rem;
+    border: 0;
     border-radius: 1.5rem;
     @include easeOut;
 
@@ -89,23 +91,22 @@ img {
 }
 
 .btn-primary {
+    margin-top: 2rem;
     background-image: $gradient;
     align-self: flex-start;
-    margin-top: 2rem;
 }
 
 .header-container {
-
     .heading-info {
-        font-weight: 500;
-        font-size: 1.2rem;
-        color: $secondary-color;
         margin-bottom: -1rem;
+        color: $secondary-color;
+        font-size: 1.2rem;
+        font-weight: 500;
     }
     
     .basic-text {
-        color: lighten(set-text-color($light-color), 10);
-        line-height: 2.0;
         margin-bottom: 2rem;
+        color: lighten(set-text-color($light-color), 10);
+        line-height: 2.0;   
     }
 }
